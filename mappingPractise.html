@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<div id="map" style="width:100%;height:500px"></div>
+
+<script>
+function myMap() {
+  var myCenter = new google.maps.LatLng(51.508742,-0.120850);
+  var royalLancaster = new google.maps.LatLng(51.512388, -0.175096);
+  var countyHall = new google.maps.LatLng(51.501010, -0.119195);
+
+  var mapCanvas = document.getElementById("map");
+  var mapOptions = {center: myCenter, zoom: 12};
+  var map = new google.maps.Map(mapCanvas, mapOptions);
+
+  var marker0 = new google.maps.Marker({position:myCenter});
+  var marker1 = new google.maps.Marker({position: royalLancaster});
+  var marker2 = new google.maps.Marker({position: countyHall});
+
+  marker1.setMap(map);
+  marker2.setMap(map);
+
+}
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaGJW9E7v_SBLq1ywB2ejhkzsGM1jKA18&callback=myMap"></script>
+
+
+</body>
+</html>
